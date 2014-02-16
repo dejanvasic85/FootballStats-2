@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Football", "Football\Footba
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Football.Tests", "Football.Tests\Football.Tests.csproj", "{0E603955-6865-47D2-8C62-C2ACD94B38B7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Football.Common", "Football.Common\Football.Common.csproj", "{4E551D4D-4F5A-40F9-A963-B36C74DA8DA5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{0E603955-6865-47D2-8C62-C2ACD94B38B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E603955-6865-47D2-8C62-C2ACD94B38B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E603955-6865-47D2-8C62-C2ACD94B38B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E551D4D-4F5A-40F9-A963-B36C74DA8DA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E551D4D-4F5A-40F9-A963-B36C74DA8DA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E551D4D-4F5A-40F9-A963-B36C74DA8DA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E551D4D-4F5A-40F9-A963-B36C74DA8DA5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

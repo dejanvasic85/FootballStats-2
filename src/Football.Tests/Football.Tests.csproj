@@ -82,6 +82,10 @@
     <Compile Include="Services\TeamServiceTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Football.Common\Football.Common.csproj">
+      <Project>{4e551d4d-4f5a-40f9-a963-b36c74da8da5}</Project>
+      <Name>Football.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Football\Football.csproj">
       <Project>{3724E4E0-898F-44BD-B2F7-066CBE4110EC}</Project>
       <Name>Football</Name>
