@@ -23,6 +23,7 @@ namespace Football
         public int GoalsFor { get; set; }
         public int GoalsAgainst { get; set; }
         public int Position { get; set; }
+        public int Points { get; set; }
         public ICollection<Player> Players { get; set; }
 
         /// <summary>

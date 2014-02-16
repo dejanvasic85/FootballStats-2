@@ -2,6 +2,7 @@ Football Stats v2
 ===================
 
 - Console application with argument handling
+- Asp.Net MVC with bootstrap and JQuery
 - Test driven development
 - Repository Pattern
 - CSV Parsing
@@ -10,7 +11,7 @@ Football Stats v2
 - Lazy loading
 - Template Pattern
 - OO design
-- AOP Aspect oriented programming
+- Html Scraping using Agility Pack
 
 ## About ##
 

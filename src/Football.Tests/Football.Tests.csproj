@@ -79,6 +79,7 @@
     <Compile Include="Models\TeamTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BaseTest.cs" />
+    <Compile Include="Repository\PremierLeagueHtmlStrategyTests.cs" />
     <Compile Include="Services\TeamServiceTests.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -90,9 +91,17 @@
       <Project>{1876697B-20DF-4DC1-8D2B-9D5B4431977B}</Project>
       <Name>Football.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Football.Repository\Football.Repository.csproj">
+      <Project>{db81a828-1e9a-42ec-8fba-a382ab7dbac1}</Project>
+      <Name>Football.Repository</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Football.Services\Football.Services.csproj">
       <Project>{C8C21466-B7B4-4C7F-8DD2-6BB9269E0AC2}</Project>
       <Name>Football.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Football.Web\Football.Web.csproj">
+      <Project>{de8e8882-220b-4c6c-b0e6-d50d4ba258e1}</Project>
+      <Name>Football.Web</Name>
     </ProjectReference>
     <ProjectReference Include="..\Football\Football.csproj">
       <Project>{3724E4E0-898F-44BD-B2F7-066CBE4110EC}</Project>
@@ -100,9 +109,21 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Content Include="Artefacts\PremierLeagueEmpty.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Artefacts\PremierLeagueBad.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Artefacts\PremierLeagueValid.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

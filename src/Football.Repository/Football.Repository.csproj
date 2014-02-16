@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.6\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -39,9 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LeagueDataCsvFileStream.cs" />
+    <Compile Include="CsvStrategy\LeagueDataCsvFileStream.cs" />
+    <Compile Include="HtmlScraperStrategy\HtmlFormatException.cs" />
+    <Compile Include="HtmlScraperStrategy\PremierLeagueHtmlStrategy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TeamCsvRepository.cs" />
+    <Compile Include="CsvStrategy\TeamCsvRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Football.Common\Football.Common.csproj">
@@ -52,6 +57,9 @@
       <Project>{1876697b-20df-4dc1-8d2b-9d5b4431977b}</Project>
       <Name>Football.Domain</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

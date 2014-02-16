@@ -7,20 +7,25 @@ namespace Football.Repository
 {
     public class TeamCsvRepository : ITeamRepository
     {
-        // Our little memory database of teams and players
+        private readonly string _filePath;
+        // Our little memory database of teams and players ( nicely used for the console application )
         private static List<Team> _teams;
+
 
         public TeamCsvRepository(string filePath)
         {
-            if (_teams == null)
-            {
-                var stream = new LeagueDataCsvFileStream(filePath, FileMode.Open, FileAccess.Read);
-                _teams = stream.GetTeamsFromFile().ToList();
-            }
+            _filePath = filePath;
         }
 
         public IEnumerable<Team> GetTeamsFromLeague()
         {
+            // Caching
+            if (_teams != null)
+                return _teams;
+
+            var stream = new LeagueDataCsvFileStream(_filePath, FileMode.Open, FileAccess.Read);
+            _teams = stream.GetTeamsFromFile().ToList();
+
             return _teams;
         }
 
