@@ -113,6 +113,7 @@ namespace Football
                 .RegisterType<ITeamRepository, TeamCsvRepository>(new InjectionConstructor("Artefacts/football.csv"));
 
             // Register all types that implement ICommand
+            // This makes it nice that developers can create new commands and they are auto registered
             CommandRegistrations.ActionEach(command => _unityContainer.RegisterType(typeof(ICommand), command, command.Name));
         }
 
@@ -121,11 +122,7 @@ namespace Football
             Console.WriteLine("\nAvailable Commands:");
             Console.WriteLine("-------------------");
             
-            CommandRegistrations.ActionEach(type =>
-            {
-                //var description = string.Format(" {0}\t {1}", type.Name, type.GetCustomAttribute<HelpAttribute>().Description)
-                Console.WriteLine(type.Name.PadRight(35) + type.GetCustomAttribute<HelpAttribute>().Description);
-            });
+            CommandRegistrations.ActionEach(type => Console.WriteLine(type.Name.PadRight(35) + type.GetCustomAttribute<HelpAttribute>().Description));
             Console.WriteLine("\n");
         }
     }

@@ -1,9 +1,8 @@
-﻿using System;
-using Football.Repository;
+﻿using Football.Repository;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Football
+namespace Football.Services
 {
     public class TeamService : ITeamService
     {

@@ -86,6 +86,14 @@
       <Project>{4e551d4d-4f5a-40f9-a963-b36c74da8da5}</Project>
       <Name>Football.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Football.Domain\Football.Domain.csproj">
+      <Project>{1876697B-20DF-4DC1-8D2B-9D5B4431977B}</Project>
+      <Name>Football.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Football.Services\Football.Services.csproj">
+      <Project>{C8C21466-B7B4-4C7F-8DD2-6BB9269E0AC2}</Project>
+      <Name>Football.Services</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Football\Football.csproj">
       <Project>{3724E4E0-898F-44BD-B2F7-066CBE4110EC}</Project>
       <Name>Football</Name>
