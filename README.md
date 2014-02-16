@@ -14,7 +14,7 @@ Football Stats v2
 
 ## About ##
 
-This simple solution was put together for displaying how the above features are able to come together even for a very minimalistic application. To get something up and running, the example was extended on top of the [football stats project v1](https://github.com/dejanvasic85/FootballStats).
+This simple solution was put together for displaying how the above features are utilised even for a very minimalistic application that allows for extensibility, testability and maintanibility. To get something up and running, the example was extended on top of the [football stats project v1](https://github.com/dejanvasic85/FootballStats).
 
 ## Running the Console ##
 
