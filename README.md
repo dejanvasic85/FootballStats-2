@@ -22,3 +22,9 @@ This simple solution was put together for displaying how the above features are 
 Open the solution, set the Football project to start-up and run! You will get the help menu with some available commands. You can always see this by supplying "help" "?" or "h".
 
 To close the application enter "quit", "q" or "exit".
+
+## Running the web application ##
+
+Opent the solution, set the Football.Web project to start-up and run!
+
+Currently, the web application is configured to use html scraper as a repository so no database is required.

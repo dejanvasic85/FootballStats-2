@@ -144,7 +144,6 @@
     <Content Include="Content\bootstrap-min.css" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap-3.1.1.js" />
-    <Content Include="Scripts\home.js" />
     <Content Include="Scripts\jquery-1.11.0.js" />
     <Content Include="Unity.Mvc4.README.txt" />
     <Content Include="Web.config" />

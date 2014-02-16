@@ -4,15 +4,8 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@section PageScript
-{
-    <script type="text/javascript">
-        // coming soon
-    </script>
-}
-
 <div class="row">
-    
+
     <div class="jumbotron">
         <h1>EPL Standings</h1>
         <p>
@@ -20,7 +13,7 @@
             season finishes with the current standings, the button will highlight what will happen
             to the teams...
         </p>
-        <p><a href="#" class="btn btn-primary btn-lg" role="button">Go &raquo;</a></p>
+        <p><a href="#" id="highlight" class="btn btn-primary btn-lg" role="button">Go &raquo;</a></p>
     </div>
 
     <div class="col-md-12">
@@ -32,17 +25,19 @@
                     <th>Team</th>
                     <th>Goals For</th>
                     <th>Goals Against</th>
+                    <th>Goal Difference</th>
                     <th>Points</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach (var m in Model)
                 {
-                    <tr>
+                    <tr id="tr-@m.Position">
                         <td>@m.Position</td>
-                        <td>@m.Name</td>
+                        <td class="js-teamname">@m.Name</td>
                         <td>@m.GoalsFor</td>
                         <td>@m.GoalsAgainst</td>
+                        <td>@m.GetGoalDifference(false)</td>
                         <td>@m.Points</td>
                     </tr>
                 }
@@ -50,3 +45,47 @@
         </table>
     </div>
 </div>
+
+@section PageScript
+{
+    <script type="text/javascript">
+        (function ($) {
+            var me = this;
+            me.isHighlighted = false;
+
+            $('#highlight').on('click', function () {
+
+                if (me.isHighlighted)
+                    return;
+
+                // Highlight champion
+                $.getJSON('@Url.Action("ListChampion")', function (team) {
+                    $('#tr-' + team.Position)
+                        .addClass('success')
+                        .find('.js-teamname')
+                        .append(' <span class="label label-default">Champions</span>');
+                });
+
+                // Highlight the relegation zone
+                $.getJSON('@Url.Action("ListRelegationZone")', function (data) {
+                    $.each(data, function (key, team) {
+                        $('#tr-' + team.Position)
+                            .addClass('danger')
+                            .find('.js-teamname')
+                            .append(' <span class="label label-default">Relegated</span>');
+                    });
+                });
+
+                // Highlight team with least goal difference
+                $.getJSON('@Url.Action("ListTeamWithLeastDifference")', function (team) {
+                    $('#tr-' + team.Position)
+                        .addClass('info')
+                        .find('.js-teamname')
+                        .append(' <span class="label label-default">Tight Goal Diff</span>');
+                });
+
+                me.isHighlighted = true;
+            });
+        })(jQuery);
+    </script>
+}
