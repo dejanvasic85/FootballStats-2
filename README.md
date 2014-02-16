@@ -25,6 +25,6 @@ To close the application enter "quit", "q" or "exit".
 
 ## Running the web application ##
 
-Opent the solution, set the Football.Web project to start-up and run!
+Open the solution, set the Football.Web project to start-up and run!
 
 Currently, the web application is configured to use html scraper as a repository so no database is required.
