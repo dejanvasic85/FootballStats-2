@@ -16,13 +16,22 @@ namespace Football.Commands
             LogService = logService;
         }
 
-        public void HandleArguments(CommandArguments args)
+        public bool HandleArguments(CommandArguments args)
         {
             // Store the arguments for future use
             Arguments = args;
 
-            // Bubble the call through for any specific handling
-            ProcessArguments(args);
+            try
+            {
+                // Bubble the call through for any specific handling by the job
+                ProcessArguments(args);
+            }
+            catch (ArgumentException ex)
+            {
+                LogService.Warning(ex.Message);
+                return false;
+            }
+            return true;
         }
 
         public void Run()

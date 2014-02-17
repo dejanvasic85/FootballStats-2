@@ -70,6 +70,7 @@ namespace Football
         void Execute(string[] args)
         {
             // Sequence: 1. Convert to command args, 2. Resolve the command, 3. Execute 
+            // This should be moved in a separate class ( and potentiall create a third party library and host on nuget!)
 
             if (args.Length == 0)
                 return;
@@ -99,9 +100,9 @@ namespace Football
                 return;
             }
 
-            // Finally - Run the command!
-            command.HandleArguments(parsedArgs);
-            command.Run();
+            // Finally - Run the command right after handling args!
+            if (command.HandleArguments(parsedArgs))
+                command.Run();
         }
 
         static void RegisterDependencies()

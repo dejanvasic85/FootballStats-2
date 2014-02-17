@@ -2,7 +2,7 @@
 {
     public interface ICommand
     {
-        void HandleArguments(CommandArguments args);
+        bool HandleArguments(CommandArguments args);
         void Run();
     }
 }
