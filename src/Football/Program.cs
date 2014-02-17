@@ -70,7 +70,7 @@ namespace Football
         void Execute(string[] args)
         {
             // Sequence: 1. Convert to command args, 2. Resolve the command, 3. Execute 
-            // This should be moved in a separate class ( and potentiall create a third party library and host on nuget!)
+            // This should be moved in a separate class ( and potentially create a third party library and host on nuget!)
 
             if (args.Length == 0)
                 return;
