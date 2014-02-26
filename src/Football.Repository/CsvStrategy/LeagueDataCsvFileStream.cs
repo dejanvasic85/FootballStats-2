@@ -18,30 +18,33 @@ namespace Football.Repository
             // Set the current base FileStream position to the start of file
             this.Position = 0;
             int lineNumber = 0;
-            StreamReader sr = new StreamReader(this);
-
-            do
+            using (StreamReader sr = new StreamReader(this))
             {
-                string line = sr.ReadLine();
-                if (line == null)
-                    break; // No more data
 
-                lineNumber++;
+                do
+                {
+                    string line = sr.ReadLine();
+                    if (line == null)
+                        break; // No more data
 
-                // If there is a header line then ignore it and move on if required
-                if (_ignoreHeaders && lineNumber == 1)
-                    continue;
+                    lineNumber++;
 
-                // The football.csv file contains a line full of dashes (to separate some teams) so just ignore this one
-                if (line.StartsWith("-"))
-                    continue;
+                    // If there is a header line then ignore it and move on if required
+                    if (_ignoreHeaders && lineNumber == 1)
+                        continue;
 
-                string[] values = line.FromCsv();
-                
-                // Only yield the value ( this happens only when it needs to evaluate the collection, see LINQ for reference )
-                yield return values.ConvertFromCsv<Team>();
+                    // The football.csv file contains a line full of dashes (to separate some teams) so just ignore this one
+                    if (line.StartsWith("-"))
+                        continue;
 
-            } while (true);
+                    string[] values = line.FromCsv();
+
+                    // Only yield the value ( this happens only when it needs to evaluate the collection, see LINQ for reference )
+                    yield return values.ConvertFromCsv<Team>();
+
+                } while (true);
+
+            }
         }
     }
 }
